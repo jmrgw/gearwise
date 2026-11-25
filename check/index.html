@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex" />
+    <title>Gearwise Checkliste</title>
+    <style>
+      :root {
+        --bg: #f8fafc; --surface: #ffffff; --text: #0f172a; --muted: #64748b; --border: #e2e8f0;
+        --accent: #1d4ed8; --done: #16a34a; color-scheme: light dark;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root { --bg: #0b1220; --surface: #111b2e; --text: #f1f5f9; --muted: #94a3b8; --border: #1e293b; --accent: #60a5fa; --done: #4ade80; }
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--text); font: 400 17px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+      main { max-width: 640px; margin: 0 auto; padding: 16px 16px 40px; display: grid; gap: 12px; }
+      header, section, footer { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+      .brand { margin: 0; font-size: 13px; font-weight: 700; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+      .brand img { border-radius: 5px; }
+      h1 { margin: 6px 0 4px; font-size: 21px; line-height: 1.25; overflow-wrap: anywhere; }
+      h2 { margin: 0 0 8px; font-size: 16px; }
+      .facts { margin: 0 0 8px; color: var(--muted); }
+      a { color: var(--accent); font-weight: 600; }
+      .note { color: var(--muted); font-size: 14px; margin: 4px 0 8px; }
+      ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+      label { display: flex; gap: 12px; align-items: flex-start; padding: 10px 4px; border-radius: 10px; cursor: pointer; min-height: 44px; }
+      label:active { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+      input[type=checkbox] { width: 24px; height: 24px; flex: none; margin: 0; accent-color: var(--done); }
+      input:checked + span { color: var(--muted); text-decoration: line-through; }
+      .progress { height: 8px; border-radius: 999px; background: var(--border); overflow: hidden; margin-top: 8px; }
+      #bar { height: 100%; width: 0; background: var(--done); transition: width .2s; }
+      .rule { font-weight: 700; margin: 0 0 10px; }
+      .reset { font: inherit; font-size: 15px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--border); background: transparent; color: var(--text); }
+      @media (prefers-reduced-motion: reduce) { #bar { transition: none; } }
+    </style>
+  </head>
+  <body>
+    <main id="app"><header><p class="brand"><img src="../logo.svg" alt="" width="20" height="20" />Gearwise</p><h1>Checkliste wird geladen …</h1></header></main>
+    <script src="check.js"></script>
+  </body>
+</html>
